@@ -21,6 +21,7 @@ pipeline {
           container('nodejs') {
             sh "npm install"
             sh "CI=true DISPLAY=:99 npm test"
+            sh "git config --global credential.helper store"
 
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
 
