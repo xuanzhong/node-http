@@ -5,7 +5,7 @@ build:
     envTemplate:
       template: "{{.DOCKER_REGISTRY}}/xuanzhong/node-http:{{.VERSION}}"
   artifacts:
-  - imageName: changeme
+  - imageName: node-http
     workspace: .
     docker: {}
   local: {}
