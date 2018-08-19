@@ -22,7 +22,7 @@ pipeline {
             sh "npm install"
             sh "CI=true DISPLAY=:99 npm test"
             sh "git config --global credential.helper store"
-
+            sh "jx step git credentials"
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
 
 
